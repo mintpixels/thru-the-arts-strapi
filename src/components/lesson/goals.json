@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_lesson_goals",
+  "info": {
+    "displayName": "Goals"
+  },
+  "options": {},
+  "attributes": {
+    "Statement": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_lesson_closures",
+  "info": {
+    "displayName": "Closure"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

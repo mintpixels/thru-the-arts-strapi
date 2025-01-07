@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_lesson_standards",
+  "info": {
+    "displayName": "Standards"
+  },
+  "options": {},
+  "attributes": {
+    "Type": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "CR",
+        "ELA",
+        "EXL Quality",
+        "SEL",
+        "Theatre",
+        "VAPA"
+      ],
+      "max": 1,
+      "required": false,
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

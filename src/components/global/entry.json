@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_entries",
+  "info": {
+    "displayName": "Entry"
+  },
+  "options": {},
+  "attributes": {
+    "Statement": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    }
+  }
+}

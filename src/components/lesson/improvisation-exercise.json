@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_lesson_improvisation_exercises",
+  "info": {
+    "displayName": "Improvisation Exercise"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Elements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.element"
+    }
+  }
+}

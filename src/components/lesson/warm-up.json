@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_lesson_warm_ups",
+  "info": {
+    "displayName": "Warm Up"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_lesson_enrichments",
+  "info": {
+    "displayName": "Enrichment"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

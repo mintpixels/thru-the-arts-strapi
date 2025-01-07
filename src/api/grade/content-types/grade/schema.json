@@ -29,6 +29,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "Lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson.lesson",
+      "mappedBy": "Grade"
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_lesson_extension_exercises",
+  "info": {
+    "displayName": "Extension Exercises"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

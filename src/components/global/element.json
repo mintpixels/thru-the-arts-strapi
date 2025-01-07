@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_elements",
+  "info": {
+    "displayName": "Element"
+  },
+  "options": {},
+  "attributes": {
+    "Headline": {
+      "type": "string"
+    },
+    "TimeEstimate": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_lesson_physical_components",
+  "info": {
+    "displayName": "Physical Component"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Entries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.entry"
+    }
+  }
+}

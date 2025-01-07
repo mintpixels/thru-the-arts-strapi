@@ -1,0 +1,163 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "Lesson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    },
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "Pre-K/Kinder",
+        "1/2",
+        "3/4",
+        "5/6",
+        "7/8",
+        "High School"
+      ],
+      "max": 1,
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "Grade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::grade.grade",
+      "inversedBy": "Lesson"
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "inversedBy": "Lesson"
+    },
+    "Goals": {
+      "displayName": "Goals",
+      "type": "component",
+      "repeatable": true,
+      "component": "lesson.goals"
+    },
+    "WarmUp": {
+      "displayName": "Warm Up",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.warm-up"
+    },
+    "Huddle": {
+      "displayName": "Huddle",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.huddle"
+    },
+    "SnackTime": {
+      "displayName": "Snack Time",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.snack-time"
+    },
+    "LessonEnrichment": {
+      "displayName": "Enrichment",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.enrichment"
+    },
+    "UpackingTheLesson": {
+      "type": "blocks"
+    },
+    "Closure": {
+      "displayName": "Closure",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.closure"
+    },
+    "WelcomingActivity": {
+      "displayName": "Welcoming Activity",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.welcoming-activity"
+    },
+    "Standards": {
+      "displayName": "Standards",
+      "type": "component",
+      "repeatable": true,
+      "component": "lesson.standards"
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "MainLesson": {
+      "displayName": "Main Lesson",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.main-lesson"
+    },
+    "FeaturedImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Resources": {
+      "displayName": "Resources",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.resources"
+    },
+    "ImprovisationExercise": {
+      "displayName": "Improvisation Exercise",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.improvisation-exercise"
+    },
+    "LessonPhysicalComponent": {
+      "displayName": "Physical Component",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.physical-component"
+    },
+    "Homework": {
+      "displayName": "Homework",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.homework"
+    },
+    "LessonExtensionExercises": {
+      "displayName": "Extension Exercises",
+      "type": "component",
+      "repeatable": false,
+      "component": "lesson.extension-exercises"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_lesson_resources",
+  "info": {
+    "displayName": "Resources"
+  },
+  "options": {},
+  "attributes": {
+    "Links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.link"
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "AdditionalLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.link"
+    }
+  }
+}

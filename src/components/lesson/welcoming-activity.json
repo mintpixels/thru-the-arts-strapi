@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_lesson_welcoming_activities",
+  "info": {
+    "displayName": "Welcoming Activity"
+  },
+  "options": {},
+  "attributes": {
+    "EstimatedTime": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

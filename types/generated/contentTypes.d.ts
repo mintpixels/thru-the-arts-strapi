@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
+    description: '';
     displayName: 'Category';
     pluralName: 'categories';
     singularName: 'category';
@@ -383,6 +384,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Lesson: Schema.Attribute.Relation<'oneToOne', 'api::lesson.lesson'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -416,6 +418,7 @@ export interface ApiGradeGrade extends Struct.CollectionTypeSchema {
     FeaturedImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    Lesson: Schema.Attribute.Relation<'oneToOne', 'api::lesson.lesson'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::grade.grade'> &
       Schema.Attribute.Private;
@@ -425,6 +428,82 @@ export interface ApiGradeGrade extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
+  collectionName: 'lessons';
+  info: {
+    description: '';
+    displayName: 'Lesson';
+    pluralName: 'lessons';
+    singularName: 'lesson';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    Closure: Schema.Attribute.Component<'lesson.closure', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    EstimatedTime: Schema.Attribute.String;
+    FeaturedImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Goals: Schema.Attribute.Component<'lesson.goals', true>;
+    Grade: Schema.Attribute.Relation<'oneToOne', 'api::grade.grade'>;
+    Homework: Schema.Attribute.Component<'lesson.homework', false>;
+    Huddle: Schema.Attribute.Component<'lesson.huddle', false>;
+    ImprovisationExercise: Schema.Attribute.Component<
+      'lesson.improvisation-exercise',
+      false
+    >;
+    LessonEnrichment: Schema.Attribute.Component<'lesson.enrichment', false>;
+    LessonExtensionExercises: Schema.Attribute.Component<
+      'lesson.extension-exercises',
+      false
+    >;
+    LessonPhysicalComponent: Schema.Attribute.Component<
+      'lesson.physical-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lesson.lesson'
+    > &
+      Schema.Attribute.Private;
+    MainLesson: Schema.Attribute.Component<'lesson.main-lesson', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    Resources: Schema.Attribute.Component<'lesson.resources', false>;
+    Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
+    SnackTime: Schema.Attribute.Component<'lesson.snack-time', false>;
+    Standards: Schema.Attribute.Component<'lesson.standards', true>;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Type: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['Pre-K/Kinder', '1/2', '3/4', '5/6', '7/8', 'High School']
+      > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
+    UpackingTheLesson: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    WarmUp: Schema.Attribute.Component<'lesson.warm-up', false>;
+    WelcomingActivity: Schema.Attribute.Component<
+      'lesson.welcoming-activity',
+      false
+    >;
   };
 }
 
@@ -939,6 +1018,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
       'api::grade.grade': ApiGradeGrade;
+      'api::lesson.lesson': ApiLessonLesson;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

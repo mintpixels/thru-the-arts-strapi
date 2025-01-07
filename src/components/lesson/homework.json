@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_lesson_homework",
+  "info": {
+    "displayName": "Homework"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}
